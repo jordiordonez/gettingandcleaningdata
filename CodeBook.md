@@ -1,4 +1,38 @@
-#Description of the variables in sumup.txt 
+##Description of the script
+First let's say we work on modified data, as inertial measurements are the rawest ones, but for the aim of this work I only consider working on sets wich contain results in analysis functions application on the inertial sets.
+
+###1 Merging the training and the test sets to create one data set.
+* We Get features to be used as variable names and rename those duplicated
+* We Get train and test data as numeric, named with features.
+* We merge train and data measurements
+* We Get and merge train and test subjects and rename the result "subject"
+* We Get and merge train and test activity and naming it "activity"
+* We Get activity_labels
+* We replace activity codes by activity labels in activity, setting activity as vector
+* We combine the subject, activity and data by columns.
+
+###2 Extracting only the measurements on the mean and standard deviation for each measurement.
+* We select columns containing mean and standart deviation.
+
+###3 descriptive activity names to name the activities in the data set
+* done during step 1.
+
+###4 Appropriately labeling the data set with descriptive variable names.
+
+with gsub we replace some regular expressions,
+
+* deleting dots,
+* dashes,
+* useless spaces,
+* redundant names,
+* spreading t and f as time and frequency.
+
+###5 Creating tidy dataset from step 4 with averages by subject and activity
+  * grouped_by function 
+  * summarize_each 
+  
+give us our final data set we write in the file sumup.txt
+##Description of the variables in sumup.txt 
 
 data are tidy and
 
